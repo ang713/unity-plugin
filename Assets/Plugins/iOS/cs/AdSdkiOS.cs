@@ -128,6 +128,11 @@ namespace StartApp
             return false;
         }
 
+        public override void SetTestAdsEnabled(bool flag)
+        {
+            sta_setTestAdsEnabled(flag);
+        }
+
         public void UpdateOrientation()
         {
             sta_setUnityAutoRotation((int)Orientation);
@@ -261,6 +266,10 @@ namespace StartApp
 
         [DllImport("__Internal")]
         static extern void sta_showSplashAd(string appName, string logoImageName, int theme, int orientation);
+
+        [DllImport("__Internal")]
+        static extern void sta_setTestAdsEnabled(bool flag);
+
     }
 }
 

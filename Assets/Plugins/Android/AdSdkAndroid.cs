@@ -188,6 +188,12 @@ namespace StartApp
             return backAd.ShowAd(EXIT_AD_TAG);
         }
 
+        public override void SetTestAdsEnabled(bool flag)
+        {
+            var sdk = new AndroidJavaClass("com.startapp.sdk.adsbase.StartAppSDK");
+            sdk.CallStatic("setTestAdsEnabled", flag);
+        }
+
         bool ReadDataFromTextFile()
         {
             bool result = false;

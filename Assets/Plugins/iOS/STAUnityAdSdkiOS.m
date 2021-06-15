@@ -90,5 +90,10 @@ void sta_showDefaultSplashAd() {
     [sdk unitySDKInitialize];
 }
 
+void sta_setTestAdsEnabled(bool flag){
+    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.testAdsEnabled = YES;
+}
+
 @end
 
